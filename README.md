@@ -1,2 +1,3 @@
-# blogreadme
-Here lies static MarkDown for my blog
+MadSprite's Blog
+=======
+Here's some nice description of what this blog does
