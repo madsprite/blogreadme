@@ -1,2 +1,2 @@
 # blogreadme
-Here are static MarkDown for my blog
+Here lies static MarkDown for my blog
