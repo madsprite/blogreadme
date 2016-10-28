@@ -35,7 +35,7 @@ social_networks:
 -  { name: xing, url: '' }
 
 # Modules Settings
-show_categories: 1
+show_categories: 0
 show_tags: 1
 show_mood: 1
 show_email: 0
