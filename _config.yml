@@ -54,7 +54,6 @@ defaults:
       comments: "true"
 
 # Serving
-url: "madsprite.com"
 baseurl: ""
 
 # Includes
