@@ -1,11 +1,11 @@
 ---
 layout: page
 date: 2016-10-28 01:55
-title: October 28, 2016 Linkfarm
+title: Security News
 ---
 
 
 
-#### LinkFarm test
+#### Follow my feed of aggregated news
 
-[google.com](google.com)
+[My RSS Feed](https://rss.huynh.space/public.php?op=rss&id=-2&key=fy8iht58764d92ce981)
