@@ -2,6 +2,8 @@
 layout: post
 date: 2017-1-16
 title: Reasons To Use A Password Manager
+category: Lesson Learned
+tags: Password Lesson
 ---
 
 ## Protect your information by using unique passwords for each website

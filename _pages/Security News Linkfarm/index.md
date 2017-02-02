@@ -2,6 +2,7 @@
 layout: page
 date: 2016-10-28 01:55
 title: Security News
+permalink: /feed/
 ---
 
 
