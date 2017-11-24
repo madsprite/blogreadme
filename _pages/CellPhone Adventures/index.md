@@ -30,11 +30,11 @@ Open or use your existing Google account.
 
 Open a voip.ms if you haven't done so. If you want to test your toes before cancelling your voice data plan, use a temporary number from voip.ms for testing.
 
-Acquire a 3cx Free edition by signing up to be emailed a license code https://www.3cx.com/phone-system/download-phone-system/ . You can ignore the free Google cloud for 1 year as we are going for indefinite years with our method.
+Acquire a 3cx Free edition by signing up to be emailed a license code [https://www.3cx.com/phone-system/download-phone-system/](https://www.3cx.com/phone-system/download-phone-system/) . You can ignore the free Google cloud for 1 year as we are going for indefinite years with our method.
 
 
 
-* Setup your Google cloud account with your existing Google account https://cloud.google.com/
+* Setup your Google cloud account with your existing Google account [https://cloud.google.com/](https://cloud.google.com/)
 * It will ask you for payment details, use your google wallet account or add a valid credit card. you won't get charged for what we are doing if done properly
 
 Create a new project named **3cx-pbx**
@@ -47,7 +47,7 @@ Click on Compute Engine > VM instances
 
 Create your VM with these settings below, name is of preference, 
 
-Use a US region only - Excluding Northern Virginia, a region geographically closer to you the better. You can use http://www.gcping.com/ to determine which one has a better connection to you, the lower the better.
+Use a US region only - Excluding Northern Virginia, a region geographically closer to you the better. You can use [http://www.gcping.com/](http://www.gcping.com/) to determine which one has a better connection to you, the lower the better.
 
 3cx suggest to use Debian 9, although that is not the case as it still is based on a Debian 8 install
 
