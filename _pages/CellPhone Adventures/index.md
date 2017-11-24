@@ -12,7 +12,7 @@ The paths I've taken to an enlighten cell phone plan for cheaper calling, textin
 
 #### The Setup
 
-My current setup reflects on key points that I am aiming for which is reducing battery footprint on my phone as well keeping an easy solution to block callers before they reach my phone. 
+My current setup reflects on key points that I am aiming for which is reducing battery footprint on my phone as well keeping an easy solution to block callers before they reach my phone. The voice mail system requires human interaction, which weeds out most bot calls, unless they take the whole duration in which the system will automatically save the call.
 
 As for call quality, it is great but that highly depends on your network, I normally drive while I get some calls through 3cx client, and call quality is fine unless I move too fast for LTE. Another issue I find is that given with the tunnel, it still does not bypass firewalls implemented at work places or free wifi locations such as Starbucks or Tims, a trade off for cheap data.
 
@@ -186,6 +186,8 @@ http://IPhere:5015?V=2
 31. Download the 3cx client on Android or iPhone. Open up your email and tap the provision attachment which should open with the 3cx client
 
 32. Once provisioned, test your outgoing first, failure to reach a signal means most likely your outbound rules are wrong. If inbound fails, make sure the voip.ms server sending the inbound call is the same one you are registering to from voip.ms.
+
+33. Ensure that voip.ms sends calls with the max amount of rings/seconds, as the pbx will handle voicemail for you.
 
 You should now have a successful system set up. Test out the solution to see if it works for you.
 
