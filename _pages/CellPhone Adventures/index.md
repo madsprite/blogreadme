@@ -41,9 +41,9 @@ Create a new project named **3cx-pbx**
 
 Click on Compute Engine > VM instances
 
-![3cx-gog1](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog1.png)
+![3cx-gog1](https://madsprite.com/assets/3cx-gog1.png)
 
-![3cx-gog2](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog2.png)
+![3cx-gog2](https://madsprite.com/assets/3cx-gog2.png)
 
 Create your VM with these settings below, name is of preference, 
 
@@ -51,25 +51,25 @@ Use a US region only - Excluding Northern Virginia, a region geographically clos
 
 3cx suggest to use Debian 9, although that is not the case as it still is based on a Debian 8 install
 
-![3cx-gog3](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog3.png)
+![3cx-gog3](https://madsprite.com/assets/3cx-gog3.png)
 
 Ensure you see the free hours caption as it will give you enough time for 1 month usage.
 
-![3cx-gog4](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog4.png)
+![3cx-gog4](https://madsprite.com/assets/3cx-gog4.png)
 
  Now we will create a Firewall Rule, click on VPC network > Firewall Rules
 
-![3cx-gog5](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog5.png)
+![3cx-gog5](https://madsprite.com/assets/3cx-gog5.png)
 
 Enter the settings below
 
-![3cx-gog6](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog6.png)
+![3cx-gog6](https://madsprite.com/assets/3cx-gog6.png)
 
 Creating this rule allows internet traffic to reach our server.
 
 Now back to our VM instance, click on our server's SSH button
 
-![3cx-gog7](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog7.png)
+![3cx-gog7](https://madsprite.com/assets/3cx-gog7.png)
 
 It will open up a browser console to our server. copy and paste the code one line at a time below (separated by empty line). Ctl+Shift+V to paste
 
@@ -91,15 +91,15 @@ sudo apt-get update && sudo apt-get install -y 3cxpbx
 
 The last line will start up 3cx configuration.
 
-![3cx-gog8](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog8.png)
+![3cx-gog8](https://madsprite.com/assets/3cx-gog8.png)
 
 Enter 1 as the choice.
 
-![3cx-gog9](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog9.png)
+![3cx-gog9](https://madsprite.com/assets/3cx-gog9.png)
 
 You will be told the link to visit, but since it's an internal IP, we need to access it from it's external IP.
 
-![3cx-gog10](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog10.png)
+![3cx-gog10](https://madsprite.com/assets/3cx-gog10.png)
 
 In example, we would visit http://35.192.51.155:5015?V=2
 
@@ -117,7 +117,7 @@ http://IPhere:5015?V=2
 
 5. This is a subdomain that you will reach your instance from. ie coolusername.3cx.us
 
-6. ![3cx-gog11](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog11.png)
+6. ![3cx-gog11](https://madsprite.com/assets/3cx-gog11.png)
 
 7. Local IP
 
@@ -141,10 +141,10 @@ http://IPhere:5015?V=2
 
 17. On the left click on SIP Trunks, add SIP Trunk
 
-18. ![3cx-gog12](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog12.png)
+18. ![3cx-gog12](https://madsprite.com/assets/3cx-gog12.png)
     You can put the number you will later port, or the temporary number for testing
 
-19. ![3cx-gog13](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog13.png)
+19. ![3cx-gog13](https://madsprite.com/assets/3cx-gog13.png)
     From your server console, you can try pinging various voip.ms servers close to your server region, it is not close to you as the voip.ms server will route traffic to your server and from your server to you for your calls.
 
     ```bash
@@ -166,18 +166,18 @@ http://IPhere:5015?V=2
 24. Outbound Rules >  Add: Name voip.ms, extension group Default, outbound route 1-5 switch from "BLOCK CALLS" to voip.ms, OK to save
 
 25. Settings > 3CX Client: Now switch to your Google cloud window, search Firebase Cloud Messaging API
-    ![3cx-gog14](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog14.png)
+    ![3cx-gog14](https://madsprite.com/assets/3cx-gog14.png)
     ​
 
 26. Create credentials > API Key: Edit settings and restrict the IP to your server's external IP. This prevents something else from using your key, This key is your Server Key
 
-27. ![3cx-gog15](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog15.png)
+27. ![3cx-gog15](https://madsprite.com/assets/3cx-gog15.png)
     IAM & admin > Settings: Copy the project number and place that as your Sender ID, click OK to save
 
-28. ![3cx-gog16](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog16.png)
+28. ![3cx-gog16](https://madsprite.com/assets/3cx-gog16.png)
     From the Dashboard, click on IP Blacklist
 
-29. ![3cx-gog17](C:\Users\MadSprite\madsprite.github.io\assets\3cx-gog17.png)
+29. ![3cx-gog17](https://madsprite.com/assets/3cx-gog17.png)
     Similar to this, from your ping test to the nearest voip.ms server of choice, copy the IP address seen from Ping statistics into Network address.
 
 30. Last is to set up automatic backups on the Dashboard, as well as setting up automatic updates from the updates page (tab on top right).
