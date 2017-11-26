@@ -49,7 +49,9 @@ Create your VM with these settings below, name is of preference,
 
 Use a US region only - Excluding Northern Virginia, a region geographically closer to you the better. You can use [http://www.gcping.com/](http://www.gcping.com/) to determine which one has a better connection to you, the lower the better.
 
-3cx suggest to use Debian 9, although that is not the case as it still is based on a Debian 8 install
+3cx suggest to use Debian 9 as that's what they utilize for their ISO, although that is not the case as it still is based on a Debian 8 install when installing it manually. At the time I tested Debian 9 from the instructions, it relied on me using Debian 8 packages and a complete rework of repositories to get them.
+
+<u>Please use Debian 8 for these instructions.</u>
 
 ![3cx-gog3](https://madsprite.com/assets/3cx-gog3.png)
 
@@ -137,7 +139,7 @@ http://IPhere:5015?V=2
 
 15. Save your installation details in a secure location!
 
-16. Visit the link provided on the page ie. https://coolusername.3cx.us:443 and login
+16. Visit the link provided on the page. You link will vary heavily to mine depending on the region you chose: ie. https://coolusername.3cx.us:443 and login
 
 17. On the left click on SIP Trunks, add SIP Trunk
 
@@ -165,7 +167,7 @@ http://IPhere:5015?V=2
 
 24. Outbound Rules >  Add: Name voip.ms, extension group Default, outbound route 1-5 switch from "BLOCK CALLS" to voip.ms, OK to save
 
-25. Settings > 3CX Client: Now switch to your Google cloud window, search Firebase Cloud Messaging API
+25. Settings > 3CX Client: Now switch to your Google cloud window, search Google Cloud Messaging API
     ![3cx-gog14](https://madsprite.com/assets/3cx-gog14.png)
     ​
 
