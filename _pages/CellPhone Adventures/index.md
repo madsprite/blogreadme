@@ -157,7 +157,7 @@ http://IPhere:5015?V=2
     Another note is to use a sub account on voip.ms, this is a security conscious measure to not expose your administrative account on voip.ms for any voip client.
 
 20. Under the options tab, you select Supports Re-invite, Re-Register Timeout to no more than 300 seconds as per voip.ms allowance. You can order around the codecs to your liking.
-    Recommended order 1st to last: G.729, G.711 U-law, and GSM-FR
+    Recommended order 1st to last: G.711 U-law, and GSM-FR, G729 is not allowed in the free version
 
 21. You may deselect PBX delivers audio, it was not tested in my case, it may cause problems for WIFI networks with firewalls.
 
