@@ -9,4 +9,4 @@ permalink: /feed/
 
 #### Follow my feed of aggregated news
 
-[My RSS Feed](https://rss.huynh.space/public.php?op=rss&id=-2&key=fy8iht58764d92ce981)
+[My RSS Feed](https://rss.madsprite.com/public.php?op=rss&id=-2&key=ful83q5abc1fd3b4998)
