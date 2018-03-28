@@ -167,7 +167,7 @@ http://IPhere:5015?V=2
 
 24. Outbound Rules >  Add: Name voip.ms, extension group Default, outbound route 1-5 switch from "BLOCK CALLS" to voip.ms, OK to save
 
-25. Settings > 3CX Client: Now switch to your Google cloud window, search ~~Google Cloud Messaging API~~ Firebase Cloud Messaging
+25. Settings > 3CX Client: Now switch to your Google cloud window, search ~~Google Cloud Messaging API~~ Firebase Cloud Messaging API [3CX Guide](https://www.3cx.com/docs/firebase-android-client/)
     ![3cx-gog14](https://madsprite.com/assets/3cx-gog14.png)
     ​
 
