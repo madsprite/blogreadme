@@ -37,7 +37,6 @@ social_networks:
 # Modules Settings
 show_categories: 0
 show_tags: 1
-show_mood: 1
 show_email: 0
 show_rss: 1
 show_comments: 1
@@ -70,6 +69,7 @@ paginate_path: "/page:num/"
 
 # Conversion
 markdown: kramdown
+excerpt_separator: <!--more-->
 
 # Assets Settings
 sass:
