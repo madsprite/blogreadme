@@ -1,5 +1,22 @@
 # Data Only Cell Phone Plan
 
+**Update**: This is an outdated tutorial, relying Debian 8 which is now End-Of-Life and no longer supported by Google Cloud.
+
+**To Upgrade from Debian 8 Jessie**: Follow these commands to upgrade to Debian 9
+
+```bash
+#!/bin/bash
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y dist-upgrade
+sudo apt-get -y clean
+sudo apt-get -y autoclean
+sudo apt-get -y autoremove
+sudo reboot 
+```
+
+----
+
 In the Canadian market, the big 3 cell phone companies provide quite competitive movement towards the latest technologies but while having a unilateral decision to keep prices high. In provinces like Quebec where there exists smaller players, it is repeated proof that these smaller players provide top service with lower rates. With every steep discount the smaller players provide, suddenly all the big 3 and subsidiaries jump into the pool and offer competitive alternatives or sometimes straight out copies of the same plan.
 
 The issue lies with the cellular data plans, they are quite expensive in Canada in average compared to the American counterpart. Where sometimes the same plan can cost roughly three times more in Canada. 
@@ -8,7 +25,7 @@ Currently, many Canadians have worked around this monopoly by dropping from the 
 
 ### The Result
 
-The paths I've taken to an enlighten cell phone plan for cheaper calling, texting, and most importantly data, has lead me to a compromise and ridiculously cheap cell plan that drives down my monthly cost to only 23% of what I was paying before. Even more cheaper if you ever become aware of the loyalty discounts. I am quite happy with this alternative, with low call traffic and texting, it is a compromise I will make for sub par voice plan in exchange for more LTE data on the cheap.
+The paths I've taken to an enlighten cell phone plan for cheaper calling, texting, and most importantly data, has lead me to a compromise and ridiculously cheap cell plan that drives down my monthly cost to only 23% of what I was paying before. I am quite happy with this alternative, with low call traffic and texting, it is a compromise I will make for sub par voice plan in exchange for more LTE data on the cheap.
 
 #### The Setup
 
@@ -50,7 +67,9 @@ Create your VM with these settings below, name is of preference,
 
 Use a US region only - Excluding Northern Virginia, a region geographically closer to you the better. You can use [http://www.gcping.com/](http://www.gcping.com/) to determine which one has a better connection to you, the lower the better.
 
-3cx can be installed on Debian 9, although Debian 10 is available on Google Cloud, it is not expected that 3cx will guarantee it  work as they tend to move slower on the newly releases.
+3cx suggest to use Debian 9 as that's what they utilize for their ISO, although that is not the case as it still is based on a Debian 8 install when installing it manually. At the time I tested Debian 9 from the instructions, it relied on me using Debian 8 packages and a complete rework of repositories to get them.
+
+<u>Please use Debian 8 for these instructions.</u>
 
 ![3cx-gog3](https://madsprite.com/assets/3cx-gog3.png)
 
@@ -68,16 +87,6 @@ Enter the settings below
 
 Creating this rule allows internet traffic to reach our server.
 
-* Port 5090 (inbound, UDP and TCP) for the 3CX tunnel.
-
-* Port 443 or 5001 (inbound, TCP) HTTPS for Presence and Provisioning, or the custom HTTPS port you specified.
-
-Additional Ports for Remote Phones such as IP Phones can enable more ports:
-
-* Port 5060 (inbound, UDP and TCP), Port 5061 (inbound, TCP if using secure SIP) - already open if using SIP Trunks.
-
-* Port 9000-10999 (inbound, UDP) for RTP - already open if using SIP Trunks.
-
 Now back to our VM instance, click on our server's SSH button
 
 ![3cx-gog7](https://madsprite.com/assets/3cx-gog7.png)
@@ -87,15 +96,15 @@ It will open up a browser console to our server. copy and paste the code one lin
 ```bash
 sudo -i
 
-sudo apt update && apt install -y net-tools dphys-swapfile
+sudo fallocate -l 1G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile && free -h
 
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab && echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf && echo 'vm.vfs_cache_pressure=50' | sudo tee -a /etc/sysctl.conf && tail /etc/sysctl.conf
 
 sudo apt update && sudo apt upgrade -y
 
-wget -O- http://downloads-global.3cx.com/downloads/3cxpbx/public.key | sudo apt-key add -
+wget -O- http://downloads.3cx.com/downloads/3cxpbx/public.key | sudo apt-key add -
 
-echo "deb http://downloads-global.3cx.com/downloads/debian stretch main" | sudo tee /etc/apt/sources.list.d/3cxpbx.list
+echo "deb http://downloads.3cx.com/downloads/debian jessie main" | sudo tee /etc/apt/sources.list.d/3cxpbx.list
 
 sudo apt-get update && sudo apt-get install -y 3cxpbx
 ```
@@ -166,7 +175,9 @@ http://IPhere:5015?V=2
     Another note is to use a sub account on voip.ms, this is a security conscious measure to not expose your administrative account on voip.ms for any voip client.
 
 20. Under the options tab, you select Supports Re-invite, Re-Register Timeout to no more than 300 seconds as per voip.ms allowance. You can order around the codecs to your liking.
-    Recommended order 1st to last: G729, G.711 U-law
+    Recommended order 1st to last: G.711 U-law, and GSM-FR, (G729 is allowed since the new Standard (Free) licensing rebranding. 2/2018)
+
+21. You may deselect PBX delivers audio, it was not tested in my case, it may cause problems for WIFI networks with firewalls.
 
 22. Click OK on top once you are done, enable the trunk by selecting it and clicking on Enable All
 
@@ -174,7 +185,7 @@ http://IPhere:5015?V=2
 
 24. Outbound Rules >  Add: Name voip.ms, extension group Default, outbound route 1-5 switch from "BLOCK CALLS" to voip.ms, OK to save
 
-25. Settings > 3CX Client: Now switch to your Google cloud window, search Firebase Cloud Messaging API [3CX Guide](https://www.3cx.com/docs/firebase-android-client/)
+25. Settings > 3CX Client: Now switch to your Google cloud window, search ~~Google Cloud Messaging API~~ Firebase Cloud Messaging API [3CX Guide](https://www.3cx.com/docs/firebase-android-client/)
     ![3cx-gog14](https://madsprite.com/assets/3cx-gog14.png)
     ​
 
@@ -187,7 +198,7 @@ http://IPhere:5015?V=2
     From the Dashboard, click on IP Blacklist
 
 29. ![3cx-gog17](https://madsprite.com/assets/3cx-gog17.png)
-    Similar to this, from your ping test to the nearest voip.ms server of choice, copy the IP address seen from Ping statistics into Network address. We want to avoid VOIP.MS from being banned by the PBX in case a hiccup causes authentication to fail.
+    Similar to this, from your ping test to the nearest voip.ms server of choice, copy the IP address seen from Ping statistics into Network address.
 
 30. Last is to set up automatic backups on the Dashboard, as well as setting up automatic updates from the updates page (tab on top right).
     This is recommended for all users and makes the instance resilient from hackers!!! Your instance will always be scanned by bots and bruteforced against. You can set updates to be weekly at a time that interruptions can be made to your phoneline.
@@ -205,5 +216,9 @@ On iPhones, the new iOS aggressively closes apps to save power, so even 3cx migh
 On terrible network connections from data or wifi, calls might take longer to reach you due to the implementation of push notifications.
 
 It is not a perfect solution for everyone, but its the best one for my use.
+
+
+
+This is a work in progress guide, I will be updating it as feedback arrives.
 
 Thanks for reading!
